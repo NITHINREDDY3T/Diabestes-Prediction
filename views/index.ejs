@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Prediction</title>
+    <!-- Add Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto:wght@400&display=swap" rel="stylesheet">
+    <!-- Add your CSS styles here -->
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <!-- Add your logo here -->
+            <img src="data:image/png;base64,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" alt="Diabetes Logo">
+        </div>
+        <h1 class="title">Diabetes Prediction</h1>
+    </header>
+    <main>
+        <form action="/predict" method="POST">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" required>
+
+            <label for="glucose">Glucose Level:</label>
+            <input type="number" id="glucose" name="glucose" required>
+
+            <label for="bmi">BMI:</label>
+            <input type="number" id="bmi" name="bmi" required>
+
+            <label for="familyHistory">Family History (1 for yes, 0 for no):</label>
+            <input type="number" id="familyHistory" name="familyHistory" required>
+
+            <label for="bloodPressure">Blood Pressure (mm Hg):</label>
+            <input type="number" id="bloodPressure" name="bloodPressure" required>
+
+            <button type="submit">Predict</button>
+        </form>
+    </main>
+    <footer>
+        <!-- Add footer content here -->
+        <p>&copy; 2023 ORANGE SQUAD</p>
+    </footer>
+</body>
+</html>
